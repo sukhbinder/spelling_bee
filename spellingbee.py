@@ -73,6 +73,7 @@ class Spelling():
         self._count = 0
         if not self._skip_intro:
             self._intro()
+        print("\nr for repeat, n for next word\n")
 
         
         while (self._count < self._num):
