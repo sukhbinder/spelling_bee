@@ -38,6 +38,18 @@ Finance
 
 ```
 
+### To check spelling log
+
+```bash
+
+spelling_log
+
+```
+This produces
+
+![](img/spelling_log.png)
+
+
 ### Quick Start
 
 1. Clone the repo
