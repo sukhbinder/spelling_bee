@@ -4,7 +4,6 @@ import datetime
 import time
 import argparse
 import matplotlib.pyplot as plt
-import pyttsx3
 import sys
 import pygame
 
@@ -35,6 +34,7 @@ class Spelling():
 
     def _say(self, sentence, sleepseconds=0.5):
         if sys.platform.startswith('linux'):
+            import pyttsx3
             engine = pyttsx3.init()
             engine.say(sentence)
             engine.setProperty('rate',90)
@@ -76,7 +76,9 @@ class Spelling():
         last_row, _ = self._log.shape
         self._say("Goodjob! How many words did you get correct?")
         no_correct = input("Enter the number of correct words: ")
-        percent = 100.0 * (float(no_correct)/ (self._count))
+        percent = 0
+        if self._count:
+            percent = 100.0 * (float(no_correct)/ (self._count))
         self._log.loc[last_row+1] = [datetime.datetime.today()] + [percent]+[no_correct]+[self._count]
         self._log.to_csv("log.csv", index=False)
         
