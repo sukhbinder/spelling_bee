@@ -54,13 +54,13 @@ This produces
 
 1. Clone the repo
   ```
-  $ git clone xxxx
-  $ cd ggg
+  $ git clone https://github.com/sukhbinder/spelling_bee
+  $ cd spelling_bee
   ```
 
 2. Initialize and activate a virtualenv:
   ```
-  $ virtualenv --no-site-packages env
+  $ virtualenv env
   $ source env/bin/activate
   ```
 
@@ -69,8 +69,13 @@ This produces
   $ pip install -r requirements.txt
   ```
 
+4. Install system dependencies, on Fedora linux:
+  ```
+  sudo dnf -y install espeak espeak-ng espeak-ng-devel libtimidity-devel
+  ```
+
 5. Run the app
   ```
-  $ xxxxxxx
+  $ python spelling_bee.py -w words.txt
   ```
 

@@ -1,0 +1,7 @@
+pandas
+datetime
+argparse
+matplotlib
+pyttsx3
+py-espeak-ng
+pygame
